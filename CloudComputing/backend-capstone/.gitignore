@@ -1,0 +1,63 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.env
+
+# Environment
+.env
+*.env.*
+
+# Firebase
+firebase-service-account.json
+*.firebase
+
+# Virtual environment
+venv/
+env/
+
+# Logs and debug files
+*.log
+*.log.*
+logs/
+debug.log
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# PyCharm and JetBrains
+*.iml
+.idea/
+out/
+*.ipr
+*.iws
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask-specific
+instance/
+*.sqlite3
+instance/
+config.py
+
+# Other
+uploads/
+*.bak
+*.tmp
+
+
+# Docker
+*.dockerfile
+*.dockerignore
+docker-compose.override.yml
