@@ -1,5 +1,5 @@
 # INJUREAL  💊📱
-![INJUREAL Logo](https://raw.githubusercontent.com/alfan1405/INJUREAL/main/Mobile%20Development/logo_injureal_v1.1.png)
+![INJUREAL Logo](https://raw.githubusercontent.com/alfan1405/INJUREAL/main/Mobile%20Development/logo_bg(1).png)
 
 ## First Aid Assistance  
 **INJUREAL** is an innovative application that aims to provide a fast and accurate solution for wound detection and classification. This application utilizes machine learning technology to analyze wound images, allowing it to identify the type of wound (such as burns and abrasions). With INJUREAL, it is hoped that the public can carry out early detection and receive appropriate treatment quickly, thereby preventing complications.
