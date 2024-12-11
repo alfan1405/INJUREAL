@@ -30,7 +30,9 @@ To install and run the S-Keen application on your local machine, follow these st
    
 6. **Run the App:**
     Connect an Android device or use an emulator to run the application.
-
+-----------------------------------------------------------------------------------------------------
+## [Download App Here (.apk file)](https://www.mediafire.com/file/j51ccnc11idm9mg/Injureal.apk/file)📲
+-----------------------------------------------------------------------------------------------------
 ## Usage
 1. **Launch the App:**
    Open the INJUREAL application on your Android device.
@@ -45,6 +47,8 @@ To install and run the S-Keen application on your local machine, follow these st
 * [TensorFlow](https://www.tensorflow.org/)
 * [TensorFlow Lite](https://www.tensorflow.org/lite)
 * [Google Cloud Platform](https://cloud.google.com/)
+* [Flask](https://pypi.org/project/Flask/)
+  
 
 ### Dataset
 Public Dataset
@@ -67,5 +71,15 @@ For detailed API documentation, refer to our [Postman Collection](https://docume
 
 ### Cloud Architecture
 <img src="" alt="4" width="auto" height="300"> <br><br>
+
+### ScreenShoot Application
+<img src="https://github.com/alfan1405/INJUREAL/blob/9747ad4008f9ff7250e9f47daacb13864725f4eb/Mobile%20Development/image/Tampilan.jpg" alt="1" width="auto" height="500"> <br><br>
+
+### Social Media
+|   Name Social Media   |                                Link                                |
+| :----------------: | :----------------------------------------------------------------: |
+| Website | [Link](https://injureal.my.id)       |
+|  Instagram  |  [Link](https://www.instagram.com/injureal.id)       |
+|   X  |   [Link](https://x.com/injureal)    |
 
 
