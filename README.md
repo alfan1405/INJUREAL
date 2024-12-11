@@ -15,6 +15,12 @@
 |  Muhammad Nabil          |  A790B4KY2950  | Mobile Development |
 |  Rusdil Jinan Afif       |  A790B4KY3975  | Mobile Development |
 
+## API Documentation
+For detailed API documentation, refer to our [Postman Collection](https://documenter.getpostman.com/view/26669880/2sAYHwKQM3). This collection includes sample requests for the following endpoints:
+- Abrassions Predict
+- Burns Predict
+- Bruises Predict
+
 ## Installation
 To install and run the S-Keen application on your local machine, follow these steps:
 1. **Clone the Repository:**
