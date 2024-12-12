@@ -43,26 +43,27 @@ To install and run the S-Keen application on your local machine, follow these st
 3. **Get Diagnosis:**
    The app will analyze the image and provide a detailed report of the detected wound condition.
 
-### Featured Technologies
+## Featured Technologies
 * [TensorFlow](https://www.tensorflow.org/)
 * [TensorFlow Lite](https://www.tensorflow.org/lite)
 * [Google Cloud Platform](https://cloud.google.com/)
 * [Flask](https://pypi.org/project/Flask/)
+* [Firebase](https://firebase.google.com/)
 * [Kotlin](https://kotlinlang.org/)
 * [Android Studio](https://developer.android.com/studio)
 * [Trello](https://trello.com/invite/b/673a077e99a0853f39e0b728/ATTI4aceb5a9d9fc09cc056b62cbcde6efcd9AD2E25D/capstone-project)
   
 
-### Dataset
-Public Dataset
+## Dataset
+### Public Dataset
 * [Dataset 1](https://www.kaggle.com/datasets/yasinpratomo/wound-dataset)
 * [Dataset 2](https://www.kaggle.com/code/ibrahimfateen/wound-classification-notebook)
 
-Final Dataset
+### Final Dataset
 * [Final Dataset](https://drive.google.com/drive/folders/1Ith4rJ0a-F1p5htkg_YYOSIog7LSpK6A?usp=sharing)
 
 
- Classification Report <br>
+### Classification Report <br>
 <img src="https://github.com/alfan1405/INJUREAL/blob/e6655d552c6f0730a8176ea50278eca9d7408e19/Machine%20Learning/ClassificationReport.png" alt="4" width="700" height="auto"><br>
 
 ## API Documentation
@@ -72,13 +73,13 @@ For detailed API documentation, refer to our [Postman Collection](https://docume
 - Burns Predict
 - Bruises Predict
 
-### Architecture INJUREAL
+## Architecture INJUREAL
 <img src="https://github.com/alfan1405/INJUREAL/blob/main/CloudComputing/backend-capstone/Architecture_Injureal.jpg" alt="4" width="auto" height="300"> <br><br>
 
-### ScreenShoot Application
+## ScreenShoot Application
 <img src="https://github.com/alfan1405/INJUREAL/blob/9747ad4008f9ff7250e9f47daacb13864725f4eb/Mobile%20Development/image/Tampilan.jpg" alt="1" width="auto" height="500"> <br><br>
 
-### Social Media
+## Social Media
 |   Name Social Media   |                                Link                                |
 | :----------------: | :----------------------------------------------------------------: |
 | Website | [Link](https://injureal.my.id)       |
