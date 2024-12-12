@@ -72,7 +72,7 @@ For detailed API documentation, refer to our [Postman Collection](https://docume
 - Burns Predict
 - Bruises Predict
 
-### Cloud Architecture
+### Architecture INJUREAL
 <img src="https://github.com/alfan1405/INJUREAL/blob/main/CloudComputing/backend-capstone/Architecture_Injureal.jpg" alt="4" width="auto" height="300"> <br><br>
 
 ### ScreenShoot Application
