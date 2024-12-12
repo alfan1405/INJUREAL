@@ -12,37 +12,43 @@ from dotenv import load_dotenv  # Untuk membaca file .env
 # Memuat variabel lingkungan dari file .env
 load_dotenv()
 
-# Inisialisasi Flask
+# Inisialisasi Flask sebagai framework aplikasi web
 app = Flask(__name__)
 
 # Konfigurasi Firebase dan Google Cloud Storage
+# Mengatur variabel lingkungan untuk kredensial Google Cloud
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+# Nama bucket di Google Cloud Storage
 BUCKET_NAME = os.getenv("BUCKET_NAME")
+# Nama koleksi di Firestore untuk menyimpan data
 FIRESTORE_COLLECTION = os.getenv("FIRESTORE_COLLECTION")
+# URL tempat model machine learning di-host
 MODEL_URL = os.getenv("MODEL_URL")
 
 # Inisialisasi Firestore dan Storage
+# Membuat klien Firestore untuk interaksi dengan database
 db = firestore.Client()
+# Membuat klien Storage untuk interaksi dengan Google Cloud Storage
 storage_client = storage.Client()
 
-# Fungsi untuk memuat model dari URL
+# Fungsi untuk memuat model machine learning dari URL
 def load_model_from_url(model_url):
     try:
-        # Ambil file model dari URL
+        # Mendownload file model dari URL
         response = requests.get(model_url)
-        response.raise_for_status()
+        response.raise_for_status()  # Memastikan tidak ada kesalahan HTTP
         with open("temp_model.h5", "wb") as f:
-            f.write(response.content)
+            f.write(response.content)  # Menyimpan model ke file sementara
         print("Model downloaded successfully from URL.")
-        return load_model("temp_model.h5")
+        return load_model("temp_model.h5")  # Memuat model dari file
     except Exception as e:
         print(f"Error loading model from URL: {e}")
         raise e
 
-# Muat model machine learning
+# Memuat model machine learning dari URL yang telah ditentukan
 model = load_model_from_url(MODEL_URL)
 
-# Daftar kelas, panduan penanganan, dan rekomendasi obat
+# Definisi daftar kelas luka dan rincian perawatan untuk masing-masing jenis luka
 class_labels = {
     "Abrasions": {
         "description": "Luka lecet akibat gesekan dengan permukaan kasar.",
@@ -67,8 +73,10 @@ class_labels = {
     },
 }
 
+# Endpoint Flask untuk prediksi luka
 @app.route('/predict', methods=['POST'])
 def predict():
+    # Memastikan file telah disertakan dalam permintaan
     if 'file' not in request.files:
         return jsonify({'error': 'No file part provided.'}), 400
     
@@ -77,36 +85,36 @@ def predict():
         return jsonify({'error': 'No selected file.'}), 400
 
     try:
-        # Validasi file gambar
+        # Validasi apakah file adalah gambar
         try:
             img = Image.open(file)
-            img.verify()  # Validasi gambar
+            img.verify()  # Memverifikasi keaslian gambar
             file.seek(0)  # Reset posisi file setelah validasi
         except Exception as e:
             return jsonify({'error': f'Invalid image file: {str(e)}'}), 400
 
         # Unggah gambar ke Google Cloud Storage
         file_extension = file.filename.rsplit('.', 1)[1].lower()
-        unique_filename = f"{uuid.uuid4()}.{file_extension}"
-        bucket = storage_client.bucket(BUCKET_NAME)
-        blob = bucket.blob(unique_filename)
-        blob.upload_from_file(file)
-        image_url = f"https://storage.googleapis.com/{BUCKET_NAME}/{unique_filename}"
+        unique_filename = f"{uuid.uuid4()}.{file_extension}"  # Membuat nama unik untuk file
+        bucket = storage_client.bucket(BUCKET_NAME)  # Mengakses bucket
+        blob = bucket.blob(unique_filename)  # Membuat blob untuk file
+        blob.upload_from_file(file)  # Mengunggah file ke bucket
+        image_url = f"https://storage.googleapis.com/{BUCKET_NAME}/{unique_filename}"  # URL gambar
 
-        # Proses gambar untuk prediksi
-        file.seek(0)  # Reset file untuk dibaca kembali
+        # Memproses gambar untuk prediksi
+        file.seek(0)  # Reset posisi file untuk dibaca ulang
         img = Image.open(file)
-        img = img.resize((150, 150))  # Ukuran sesuai input model
-        img_array = np.array(img) / 255.0  # Normalisasi gambar
-        img_array = np.expand_dims(img_array, axis=0)
+        img = img.resize((150, 150))  # Mengubah ukuran gambar sesuai input model
+        img_array = np.array(img) / 255.0  # Normalisasi nilai piksel gambar
+        img_array = np.expand_dims(img_array, axis=0)  # Menambahkan dimensi batch
 
-        # Prediksi dengan model
-        predictions = model.predict(img_array)
-        predicted_class = np.argmax(predictions[0])
-        predicted_label = list(class_labels.keys())[predicted_class]
-        treatment_data = class_labels[predicted_label]
+        # Prediksi jenis luka menggunakan model
+        predictions = model.predict(img_array)  # Melakukan prediksi
+        predicted_class = np.argmax(predictions[0])  # Mendapatkan indeks prediksi tertinggi
+        predicted_label = list(class_labels.keys())[predicted_class]  # Label kelas yang diprediksi
+        treatment_data = class_labels[predicted_label]  # Detail perawatan berdasarkan prediksi
 
-        # Simpan data ke Firestore
+        # Menyimpan data ke Firestore
         data_to_save = {
             "imageUrl": image_url,
             "wounds_name": predicted_label,
@@ -115,12 +123,12 @@ def predict():
             "warnings": treatment_data["warnings"],
             "do_not": treatment_data["do_not"],
             "recommended_medicines": treatment_data["recommended_medicines"],
-            "user_id": request.form.get("user_id", "unknown"),  # Ambil user_id dari form
-            "timestamp": firestore.SERVER_TIMESTAMP,
+            "user_id": request.form.get("user_id", "unknown"),  # User ID opsional dari form
+            "timestamp": firestore.SERVER_TIMESTAMP,  # Waktu server saat menyimpan data
         }
-        db.collection(FIRESTORE_COLLECTION).add(data_to_save)
+        db.collection(FIRESTORE_COLLECTION).add(data_to_save)  # Tambahkan data ke Firestore
 
-        # Kirim respons ke klien
+        # Kirim respons JSON ke klien
         return jsonify({
             "prediction": predicted_label,
             "description": treatment_data["description"],
@@ -132,10 +140,12 @@ def predict():
         }), 200
 
     except Exception as e:
+        # Tangani kesalahan internal server
         return jsonify({'error': f'Internal server error: {str(e)}'}), 500
 
+# Menjalankan aplikasi Flask
 if __name__ == '__main__':
-    # Menggunakan PORT environment variable yang disediakan oleh Cloud Run
+    # Menggunakan PORT dari variabel lingkungan atau default 8080
     import os
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
