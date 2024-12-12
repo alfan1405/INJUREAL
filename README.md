@@ -31,7 +31,7 @@ To install and run the S-Keen application on your local machine, follow these st
 6. **Run the App:**
     Connect an Android device or use an emulator to run the application.
 -----------------------------------------------------------------------------------------------------
-## [Download App Here (.apk file)](https://www.mediafire.com/file/j51ccnc11idm9mg/Injureal.apk/file)📲
+## [Download App Here (.apk file)](https://drive.google.com/file/d/108-hHZ50EGybqaRXFmrRsrpJAkt54N3T/view?usp=sharing)📲
 -----------------------------------------------------------------------------------------------------
 ## Usage
 1. **Launch the App:**
@@ -48,6 +48,9 @@ To install and run the S-Keen application on your local machine, follow these st
 * [TensorFlow Lite](https://www.tensorflow.org/lite)
 * [Google Cloud Platform](https://cloud.google.com/)
 * [Flask](https://pypi.org/project/Flask/)
+* [Kotlin](https://kotlinlang.org/)
+* [Android Studio](https://developer.android.com/studio)
+* [Trello](https://trello.com/invite/b/673a077e99a0853f39e0b728/ATTI4aceb5a9d9fc09cc056b62cbcde6efcd9AD2E25D/capstone-project)
   
 
 ### Dataset
