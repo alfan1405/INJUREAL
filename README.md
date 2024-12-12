@@ -16,7 +16,7 @@
 |  Rusdil Jinan Afif       |  A790B4KY3975  | Mobile Development |
 
 ## Installation
-To install and run the S-Keen application on your local machine, follow these steps:
+To install and run the INJUREAL application on your local machine, follow these steps:
 1. **Clone the Repository:**
     ```bash
     git clone https://github.com/your-username/INJUREAL.git
