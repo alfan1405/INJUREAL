@@ -70,7 +70,7 @@ For detailed API documentation, refer to our [Postman Collection](https://docume
 - Bruises Predict
 
 ### Cloud Architecture
-<img src="" alt="4" width="auto" height="300"> <br><br>
+<img src="https://github.com/alfan1405/INJUREAL/blob/main/CloudComputing/backend-capstone/architecturecc.PNG" alt="4" width="auto" height="300"> <br><br>
 
 ### ScreenShoot Application
 <img src="https://github.com/alfan1405/INJUREAL/blob/9747ad4008f9ff7250e9f47daacb13864725f4eb/Mobile%20Development/image/Tampilan.jpg" alt="1" width="auto" height="500"> <br><br>
