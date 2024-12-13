@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="apk">#1a6c9c</color>
+    <color name="edit_text_background">#a1b5c7</color>
+    <color name="checkbox_tint">#1a6c9c</color>
+    <color name="primary_color">#F8F9FE</color>
+    <color name="gray_color">#606060</color>
+    <color name="bottom_nav_bg">#F3EDF7</color>
+    <color name="bottom_nav_icon_color">#000000</color>
+    <color name="bottom_nav_text_color">#000000</color>
+    <color name="nav_background">#F8F9FE</color>
+    <color name="nav_item_active">#1a6c9c</color>
+    <color name="nav_item_inactive">#A3A3A3</color>
+    <color name="nav_shadow">#00000026</color>
+    <color name="fab_color">#FF4081</color>
+
+    <color name="warna_utama">#96C9F4</color>
+    <color name="warna_utama2">#3FA2F6</color>
+    <color name="warna_utama3">#0F67B1</color>
+    <color name="warna_background">#F8F9FE</color>
+
+
+</resources>

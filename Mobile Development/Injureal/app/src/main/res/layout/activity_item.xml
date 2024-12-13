@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@color/warna_background">
+
+    <ImageView
+        android:id="@+id/history_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="History Image" />
+
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@id/history_image"
+        android:layout_alignEnd="@id/history_image"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_delete"
+        app:tint="@color/warna_utama3"
+        android:background="@drawable/bottom_navigation_view"
+        android:contentDescription="Delete Button" />
+
+    <TextView
+        android:id="@+id/wound_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wound Name"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/history_image"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_below="@id/wound_name"
+        android:layout_marginTop="4dp" />
+
+</RelativeLayout>

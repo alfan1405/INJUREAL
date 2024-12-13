@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">INJUREAL</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_x">CameraX</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="analyze">Scan</string>
+    <string name="result">Analysis Results</string>
+    <string name="no_history_found">Empty History</string>
+    <string name="textname">Text Name</string>
+    <string name="score">10%</string>
+    <string name="history">History</string>
+    <string name="home">Home</string>
+    <string name="link">Read</string>
+    <string name="image_classifier_failed">Image classifier failed to initialize. See error logs for details</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="history_image_desc">Image representing the wound history</string>
+    <string name="delete">Delete</string>
+</resources>
