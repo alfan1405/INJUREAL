@@ -52,7 +52,7 @@ To install and run the INJUREAL application on your local machine, follow these 
 * [Kotlin](https://kotlinlang.org/)
 * [Android Studio](https://developer.android.com/studio)
 * [Trello](https://trello.com/invite/b/673a077e99a0853f39e0b728/ATTI4aceb5a9d9fc09cc056b62cbcde6efcd9AD2E25D/capstone-project)
-* [Figma](https://www.figma.com/design/YLm2JYS2Sh9ab0gbTMVZQs/INJUREAL?node-id=1-2&node-type=canvas&t=1KrIPjocRVH1oWtv-0)
+* [Figma](https://www.figma.com/design/tuuOjCR0P0MKguUQV9ZEQg/INJUREAL-(Community))
   
 
 ## Dataset
